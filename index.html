@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<!-- Servidor é um computador preparado com os arquivos  do sistema, das aplicações, ele está preparado para servir isso  para alguém -->
+<!-- HTML
+
+    HYPERTEXT {
+        texto que contém links  para outros documentos.
+    } 
+    
+    
+    MARKUP {
+        texto conterá marcações(<tags>)
+    } 
+    
+    LANGUAGE {
+        para me comunicar de certa maneira. Sintaxe especifica para escrita 
+    }
+-->
+
+<html>
+
+
+    <head> <!-- é a parte  que eu coloco informações importantes que eu possa configurar meu documento -->
+        <title>Doe vida! Doe sangue</title>
+        <link rel="stylesheet" href="style.css">
+        <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet" />
+    </head>
+
+    <body> <!-- é o corpo do HTML, vem todo o conteúdo visivel para o usuário, dentro de certa página  -->
+        <header>
+            <h1>Doe</h1>
+            <h2>A sua doação importa</h2>
+            <p>Até três vidas com 1 doação</p>
+            <p>Mais de 38.000 doações são necessárias todos os dias</p>
+            <p>Apanas 1,9% da população brasileira, doa sangue.</p>
+            <button>Quero ajudar!</button>
+
+            
+        </header> <!-- Vai ficar em cima da página -->
+
+        <!-- input = entrada de texto -->
+        <!-- output = saída de texto -->
+        <section class="form hide">
+            <h2>Entre na lista de doadores</h2>
+            <form action="/" method="POST">
+                <input 
+                    type="text" 
+                    name="name"
+                    placeholder="Nome Completo"
+                >
+
+                <input 
+                    type="text" 
+                    name="email"
+                    placeholder="Email"
+                >
+
+                <input 
+                    type="text" 
+                    name="blood"
+                    placeholder="Tipo sanguíneo"
+                >
+
+                <button>Quero ajudar!</button>
+
+            </form>
+        </section>
+
+        <main>
+            <h2>Últimos <span>doadores</span></h2>
+            
+            <section class="donors">
+
+                {% for donor in donors %}
+
+                    <div class="donor">
+                        <div class="blood">{{donor.blood}}</div>
+                        <p>{{donor.name}}</p>
+                    </div> <!-- Caixa, Conteiner, eu estou agrupando conteudos aqui dentro -->
+
+                {%endfor%}
+
+            </section> <!-- Formulário -->
+        </main> <!-- Ao meio da página -->
+
+        <footer>Com amor Fi Do Zé industries</footer> <!-- No final da página -->
+
+        <script src="scripts.js"></script>
+    </body>
+
+</html>
